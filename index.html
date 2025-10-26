@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập JavaScript + DOM</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <h1>Bộ Bài Tập JavaScript + DOM</h1>
+        <p>Thực hành thao tác DOM, sự kiện và lưu trữ dữ liệu phía trình duyệt.</p>
+        <nav class="site-nav">
+            <a href="#form-validation">Form Validation</a>
+            <a href="#todo">Todo List</a>
+            <a href="#calculator">Calculator</a>
+            <a href="#slider">Image Slider</a>
+            <a href="#cart">LocalStorage Cart</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="form-validation" class="card">
+            <h2>Form Validation</h2>
+            <form id="signup-form" novalidate>
+                <div class="form-field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="nhapemail@example.com" required>
+                    <small class="error-message" data-for="email"></small>
+                </div>
+                <div class="form-field">
+                    <label for="password">Mật khẩu</label>
+                    <input type="password" id="password" name="password" placeholder="Tối thiểu 8 ký tự" required>
+                    <small class="error-message" data-for="password"></small>
+                </div>
+                <div class="form-field">
+                    <label for="phone">Số điện thoại</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Ví dụ: 0987654321" required>
+                    <small class="error-message" data-for="phone"></small>
+                </div>
+                <button type="submit">Đăng ký</button>
+                <p class="success-message" id="form-success"></p>
+            </form>
+        </section>
+
+        <section id="todo" class="card">
+            <h2>Todo List</h2>
+            <div class="todo-input">
+                <input type="text" id="todo-input" placeholder="Nhập công việc...">
+                <button id="add-todo">Thêm</button>
+            </div>
+            <ul id="todo-list" class="todo-list"></ul>
+        </section>
+
+        <section id="calculator" class="card">
+            <h2>Calculator</h2>
+            <div class="calculator">
+                <div class="calculator-display" id="calc-display">0</div>
+                <div class="calculator-buttons" id="calc-buttons">
+                    <button data-action="clear" class="secondary">C</button>
+                    <button data-action="delete" class="secondary">⌫</button>
+                    <button data-operation="%" class="secondary">%</button>
+                    <button data-operation="/" class="accent">÷</button>
+
+                    <button data-value="7">7</button>
+                    <button data-value="8">8</button>
+                    <button data-value="9">9</button>
+                    <button data-operation="*" class="accent">×</button>
+
+                    <button data-value="4">4</button>
+                    <button data-value="5">5</button>
+                    <button data-value="6">6</button>
+                    <button data-operation="-" class="accent">−</button>
+
+                    <button data-value="1">1</button>
+                    <button data-value="2">2</button>
+                    <button data-value="3">3</button>
+                    <button data-operation="+" class="accent">+</button>
+
+                    <button data-value="0" class="wide">0</button>
+                    <button data-value=".">.</button>
+                    <button data-action="calculate" class="primary">=</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="slider" class="card">
+            <h2>Image Slider</h2>
+            <div class="slider" aria-label="Slider ảnh">
+                <button class="slider-control prev" aria-label="Ảnh trước" id="slider-prev">‹</button>
+                <div class="slider-track" id="slider-track">
+                    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80" alt="Phong cảnh 1">
+                    <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80" alt="Phong cảnh 2">
+                    <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=80" alt="Phong cảnh 3">
+                    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80" alt="Phong cảnh 4">
+                </div>
+                <button class="slider-control next" aria-label="Ảnh kế tiếp" id="slider-next">›</button>
+            </div>
+            <div class="slider-dots" id="slider-dots"></div>
+        </section>
+
+        <section id="cart" class="card">
+            <h2>Giỏ hàng (LocalStorage)</h2>
+            <div class="product-list" id="product-list"></div>
+            <div class="cart">
+                <h3>Giỏ hàng của bạn</h3>
+                <ul id="cart-items"></ul>
+                <p class="cart-total">Tổng cộng: <span id="cart-total">0₫</span></p>
+                <button id="clear-cart" class="secondary">Xóa giỏ hàng</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Hoàn thành các bài tập để nắm vững thao tác DOM và quản lý trạng thái phía client.</p>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
